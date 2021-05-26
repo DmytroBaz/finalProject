@@ -2,7 +2,7 @@
 Header (top area). 
 ===========================================================================--%> 
 
-<%@ page import="ua.kharkov.knure.dkolesnikov.st4example.db.Role" %>
+<%@ page import="com.bazalytskyi.finalProject.entity.Role" %>
 <%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
 <%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
 
@@ -22,8 +22,8 @@ This is the user menu.
 This way we define the ADMIN MENU. 
 ===========================================================================--%> 
 		<c:when test="${userRole.name == 'admin' }">
-			<a href="controller?command=listOrders">
-				<fmt:message key="header_jspf.anchor.all_orders"/>
+			<a href="controller?command=listUsers">
+				<fmt:message key="header_jspf.anchor.all_users"/>
 			</a> &nbsp;
 		</c:when>
 
@@ -32,8 +32,8 @@ This way we define the ADMIN MENU.
 This way we define the USER MENU.
 ===========================================================================--%> 
 		<c:when test="${userRole.name == 'client'}">
-			<a href="controller?command=listMenu">
-				<fmt:message key="header_jspf.anchor.menu"/>
+			<a href="controller?command=listTests">
+				<fmt:message key="header_jspf.anchor.tests"/>
 			</a> &nbsp;
 		</c:when>
 	</c:choose>

@@ -1,25 +1,15 @@
 package com.bazalytskyi.finalProject.entity;
 
-public class Role {
-    private int id;
-    private String name;
+public enum Role {
+    ADMIN, CLIENT;
 
-    public Role() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public static Role getRole(Account user) {
+        int roleId = user.getRoleId();
+        return Role.values()[roleId];
     }
 
     public String getName() {
-        return name;
+        return name().toLowerCase();
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

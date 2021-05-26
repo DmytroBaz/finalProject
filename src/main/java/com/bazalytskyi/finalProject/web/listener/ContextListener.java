@@ -78,19 +78,14 @@ public class ContextListener implements ServletContextListener {
 		
 		log("Log4J initialization finished");
 	}
-	
-	/**
-	 * Initializes CommandContainer.
-	 * 
-	 * @param servletContext
-	 */
+
 	private void initCommandContainer() {
 		log.debug("Command container initialization started");
 		
 		// initialize commands container
 		// just load class to JVM
 		try {
-			Class.forName("com.bazalytskyi..st4example.web.command.CommandContainer");
+			Class.forName("com.bazalytskyi.finalProject.web.command.CommandContainer");
 		} catch (ClassNotFoundException ex) {
 			throw new RuntimeException(ex);
 		}
