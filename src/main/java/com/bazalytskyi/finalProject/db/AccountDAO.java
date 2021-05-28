@@ -17,7 +17,7 @@ public class AccountDAO {
             "SELECT * FROM accounts WHERE id=?";
 
     private static final String SQL_UPDATE_ACCOUNT =
-            "UPDATE accounts SET firstName=?, lastName=?, login=?, password=?, active=?" +
+            "UPDATE accounts SET firstName=?, lastName=?, login=?, password=?, active=?, localeName=?" +
                     "	WHERE id=?";
 
 
@@ -83,6 +83,7 @@ public class AccountDAO {
             pstmt.setString(field++, account.getLogin());
             pstmt.setString(field++, account.getPassword());
             pstmt.setBoolean(field++, account.isActive());
+            pstmt.setString(field++, account.getLocaleName());
             pstmt.setInt(field, account.getId());
 
         } catch (SQLException e) {
@@ -105,6 +106,7 @@ public class AccountDAO {
                 account.setLogin(rs.getString(EntityFields.ENTITY__LOGIN));
                 account.setPassword(rs.getString(EntityFields.ENTITY__PASSWORD));
                 account.setActive(rs.getBoolean(EntityFields.ENTITY__IS_ACTIVE));
+                account.setLocaleName(rs.getString(EntityFields.ENTITY__LOCALE_NAME));
                 account.setRoleId(rs.getInt(EntityFields.ENTITY__ROLE));
 
                 return account;

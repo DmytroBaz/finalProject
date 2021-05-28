@@ -9,7 +9,7 @@ public class Account {
     private String lastName;
     private String login;
     private String password;
-    //private LocalDateTime createTime;
+    private String localeName;
     private int roleId;
     private boolean active;
 
@@ -19,6 +19,14 @@ public class Account {
 //    public void setCreateTime(LocalDateTime createTime) {
 //        this.createTime = createTime;
 //    }
+
+    public String getLocaleName() {
+        return localeName;
+    }
+
+    public void setLocaleName(String localeName) {
+        this.localeName = localeName;
+    }
 
     public String getFirstName() {
         return firstName;
