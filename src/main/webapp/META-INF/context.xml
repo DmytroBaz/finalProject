@@ -43,9 +43,14 @@ NONE  READ_COMMITTED  READ_UNCOMMITTED  REPEATABLE_READ SERIALIZABLE
 <!--			defaultAutoCommit="false"-->
 <!--			defaultTransactionIsolation="READ_COMMITTED"-->
 <!--			url="jdbc:derby://localhost:1527/st4db"/>-->
-	<Resource name="jdbc/testdb" auth="Container" type="javax.sql.DataSource"
+	<Resource name="jdbc/testdb"
+			  auth="Container"
+			  type="javax.sql.DataSource"
 			  maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-			  username="user" password="userpass" driverClassName="com.mysql.cj.jdbc.Driver"
-			  url="jdbc:mysql://localhost:3306/testdb?relaxAutoCommit=true"/>
+			  username="user" password="userpass"
+			  driverClassName="com.mysql.cj.jdbc.Driver"
+			  defaultAutoCommit="false"
+			  defaultTransactionIsolation="READ_COMMITTED"
+			  url="jdbc:mysql://localhost:3306/testdb"/>
 
 </Context>

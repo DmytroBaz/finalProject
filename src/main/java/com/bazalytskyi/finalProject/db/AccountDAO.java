@@ -85,7 +85,9 @@ public class AccountDAO {
             pstmt.setBoolean(field++, account.isActive());
             pstmt.setString(field++, account.getLocaleName());
             pstmt.setInt(field, account.getId());
+            pstmt.executeUpdate();
 
+            pstmt.close();
         } catch (SQLException e) {
             DBManager.getInstance().rollbackAndClose(con);
             e.printStackTrace();
