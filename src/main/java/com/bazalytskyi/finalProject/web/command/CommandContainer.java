@@ -24,9 +24,11 @@ public class CommandContainer {
 //		commands.put("noCommand", new NoCommand());
 		commands.put("viewSettings", new ViewSettingsCommand());
 		commands.put("updateSettings", new UpdateSettingsCommand());
-//
-//		// client commands
+
+		// client commands
 //		commands.put("listMenu", new ListMenuCommand());
+		commands.put("listTests", new ListTestCommand());
+
 //
 //		// admin commands
 //		commands.put("listOrders", new ListOrdersCommand());

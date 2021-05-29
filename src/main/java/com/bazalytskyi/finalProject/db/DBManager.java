@@ -23,6 +23,7 @@ public class DBManager {
 
     public Connection getConnection() throws SQLException {
         Connection con = null;
+//        con.setAutoCommit(false);
         try {
             Context initContext = new InitialContext();
             Context envContext = (Context) initContext.lookup("java:/comp/env");

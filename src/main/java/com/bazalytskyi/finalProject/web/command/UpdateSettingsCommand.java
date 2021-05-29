@@ -32,7 +32,7 @@ public class UpdateSettingsCommand extends Command {
 		
 		// UPDATE USER ////////////////////////////////////////////////////////
 		
-		Account account = (Account) request.getSession().getAttribute("Account");
+		Account account = (Account) request.getSession().getAttribute("user");
 		boolean updateAccount = false;
 		
 		// update first name
