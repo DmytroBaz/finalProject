@@ -6,7 +6,7 @@ public class Test {
     private int id;
     private String name;
     private String complexity;
-    private Time decisionTime;
+    private String decisionTime;
     private int subjectId;
 
     public int getId() {
@@ -33,11 +33,11 @@ public class Test {
         this.complexity = complexity;
     }
 
-    public Time getDecisionTime() {
+    public String getDecisionTime() {
         return decisionTime;
     }
 
-    public void setDecisionTime(Time decisionTime) {
+    public void setDecisionTime(String decisionTime) {
         this.decisionTime = decisionTime;
     }
 

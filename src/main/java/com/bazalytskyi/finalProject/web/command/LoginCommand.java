@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.jstl.core.Config;
 
 
 public class LoginCommand extends Command {
@@ -65,17 +66,17 @@ public class LoginCommand extends Command {
 			log.info("User " + user + " logged as " + userRole.toString().toLowerCase());
 
 			// work with i18n
-//			String userLocaleName = user.getLocaleName();
-//			log.trace("userLocalName --> " + userLocaleName);
+			String userLocaleName = user.getLocaleName();
+			log.trace("userLocalName --> " + userLocaleName);
 
-//			if (userLocaleName != null && !userLocaleName.isEmpty()) {
-//				Config.set(session, "javax.servlet.jsp.jstl.fmt.locale", userLocaleName);
-//
-//				session.setAttribute("defaultLocale", userLocaleName);
-//				log.trace("Set the session attribute: defaultLocaleName --> " + userLocaleName);
-//
-//				log.info("Locale for user: defaultLocale --> " + userLocaleName);
-//			}
+			if (userLocaleName != null && !userLocaleName.isEmpty()) {
+				Config.set(session, "javax.servlet.jsp.jstl.fmt.locale", userLocaleName);
+
+				session.setAttribute("defaultLocale", userLocaleName);
+				log.trace("Set the session attribute: defaultLocaleName --> " + userLocaleName);
+
+				log.info("Locale for user: defaultLocale --> " + userLocaleName);
+			}
 		}
 
 		log.debug("Command finished");

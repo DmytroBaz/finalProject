@@ -12,5 +12,11 @@ public final class EntityFields {
     public static final String ENTITY__LOCALE_NAME = "localeName";
     public static final String ENTITY__IS_ACTIVE = "active";
 
+    public static final String ENTITY__NAME = "name";
+    public static final String ENTITY__DECISION_TIME = "decision_time";
+    public static final String ENTITY__COMPLEXITY = "complexity";
+    public static final String ENTITY__SUBJECT_ID = "subject_id";
+
+
 
 }
