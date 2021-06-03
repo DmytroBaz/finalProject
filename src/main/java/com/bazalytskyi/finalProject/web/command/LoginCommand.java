@@ -39,7 +39,7 @@ public class LoginCommand extends Command {
 			return forward;
 		}
 
-		Account user = new AccountDAO().findAccountByLogin(login);
+		Account user = AccountDAO.getInstance().findAccountByLogin(login);
 		log.trace("Found in DB: user --> " + user);
 
 		if (user == null || !password.equals(user.getPassword())) {

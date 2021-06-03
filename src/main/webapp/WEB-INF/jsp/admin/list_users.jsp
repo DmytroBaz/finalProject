@@ -47,7 +47,7 @@
 										<input type="submit" value='<fmt:message key="list_users_jsp.table.button.unblock"/>'/>
 									</form>
 									<form id="make_order" action="controller" method="post">
-										<input type="hidden" name="command" value="viewSettings"/>
+										<input type="hidden" name="command" value="viewUser"/>
 										<input type="hidden" name="userId" value="${item.id}"/>
 										<input type="submit" value='<fmt:message key="list_users_jsp.table.button.update"/>'/>
 									</form>

@@ -18,7 +18,7 @@ public class BlockUserCommand extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         log.debug("Command starts");
-        AccountDAO accountDAO = new AccountDAO();
+        AccountDAO accountDAO = AccountDAO.getInstance();
         int id = Integer.parseInt(request.getParameter("userId"));
         Account account = accountDAO.findAccount(id);
         account.setActive(false);

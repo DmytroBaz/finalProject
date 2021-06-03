@@ -34,6 +34,8 @@ public class CommandContainer {
 		commands.put("listUsers", new ListUserCommand());
 		commands.put("blockUser", new BlockUserCommand());
 		commands.put("unblockUser", new UnblockUserCommand());
+		commands.put("updateUser", new UpdateUserCommand());
+		commands.put("viewUser", new ViewUserCommand());
 
 		log.debug("Command container was successfully initialized");
 		log.trace("Number of commands --> " + commands.size());

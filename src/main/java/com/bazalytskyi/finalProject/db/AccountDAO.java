@@ -11,6 +11,13 @@ import java.util.List;
 
 
 public class AccountDAO {
+    private static AccountDAO instance;
+
+    public static synchronized AccountDAO getInstance() {
+        if (instance == null)
+            instance = new AccountDAO();
+        return instance;
+    }
 
     private static final String SQL__FIND_ACCOUNT_BY_LOGIN =
             "SELECT * FROM accounts WHERE login=?";

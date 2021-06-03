@@ -20,7 +20,7 @@ public class ListUserCommand extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         log.debug("Command starts");
-        List<Account> accounts = new AccountDAO().findAll();
+        List<Account> accounts = AccountDAO.getInstance().findAll();
         log.trace("Found in DB List accounts" + accounts);
         request.setAttribute("accounts", accounts);
         log.trace("Set the request attribute: accounts --> " + accounts);

@@ -8,47 +8,53 @@
 <%@ include file="/WEB-INF/jspf/head.jspf" %>
 
 <body>
-	<table id="main-container">
-			
-		<%@ include file="/WEB-INF/jspf/header.jspf" %>
-			
-		<tr>
-			<td class="content">			
+<table id="main-container">
+
+	<%@ include file="/WEB-INF/jspf/header.jspf" %>
+
+	<tr>
+		<td class="content">
 			<%-- CONTENT --%>
-				<form id="make_order" action="controller">
-					<input type="hidden" name="command" value="makeOrder"/>
-					<input type="submit" value='<fmt:message key="list_menu_jsp.button.make_an_order"/>'/>
+			<table id="list_menu_table">
+				<thead>
+				<tr>
+					<td>№</td>
+					<td><fmt:message key="list_menu_jsp.table.header.name"/></td>
+					<td><fmt:message key="list_menu_jsp.table.header.complex"/></td>
+					<td><fmt:message key="list_menu_jsp.table.header.subject"/></td>
+					<td><fmt:message key="list_menu_jsp.table.header.duration"/></td>
+				</tr>
+				</thead>
 
-					<table id="list_menu_table">
-						<thead>
-						<tr>
-							<td>№</td>
-							<td><fmt:message key="list_menu_jsp.table.header.name"/></td>
-							<td><fmt:message key="list_menu_jsp.table.header.complex"/></td>
-							<td><fmt:message key="list_menu_jsp.table.header.subject"/></td>
-						</tr>
-						</thead>
+				<c:set var="k" value="0"/>
+				<c:forEach var="item" items="${tests}">
+					<c:set var="k" value="${k+1}"/>
+					<tr>
+						<td><c:out value="${k}"/></td>
+						<td>${item.name}</td>
+						<td>${item.complexity}</td>
+						<td>${item.subjectId}</td>
+						<td>${item.decisionTime}</td>
+						<td><form id="make_order" action="controller">
+							<input type="hidden" name="command" value="makeOrder"/>
+							<input type="submit" value='<fmt:message key="list_users_jsp.table.button.update"/>'/>
+						</form>
+							<form id="make_order" action="controller">
+								<input type="hidden" name="command" value="makeOrder"/>
+								<input type="submit" value='<fmt:message key="list_menu_jsp.button.delete"/>'/>
+							</form>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
 
-						<c:set var="k" value="0"/>
-						<c:forEach var="item" items="${tests}">
-							<c:set var="k" value="${k+1}"/>
-							<tr>
-								<td><c:out value="${k}"/></td>
-								<td>${item.name}</td>
-								<td>${item.complexity}</td>
-								<td>${item.decisionTime}</td>
-								<td><input type="checkbox" name="itemId" value="${item.id}"/></td>
-							</tr>
-						</c:forEach>
-					</table>
 
-				</form>
 
 			<%-- CONTENT --%>
-			</td>
-		</tr>
-		
-		<%@ include file="/WEB-INF/jspf/footer.jspf" %>
-		
-	</table>
+		</td>
+	</tr>
+
+	<%@ include file="/WEB-INF/jspf/footer.jspf" %>
+
+</table>
 </body>

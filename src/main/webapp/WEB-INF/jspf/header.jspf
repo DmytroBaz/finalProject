@@ -24,6 +24,9 @@ This way we define the ADMIN MENU.
 		<c:when test="${userRole.name == 'admin' }">
 			<a href="controller?command=listUsers">
 				<fmt:message key="header_jspf.anchor.all_users"/>
+			</a>
+			<a href="controller?command=listTests">
+				<fmt:message key="header_jspf.anchor.tests"/>
 			</a> &nbsp;
 		</c:when>
 
