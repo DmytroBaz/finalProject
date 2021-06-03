@@ -52,10 +52,10 @@ public class LoginCommand extends Command {
 			log.trace("userRole --> " + userRole);
 
 			if (userRole == Role.ADMIN)
-				forward = Path.PAGE__ADMIN_ALL_USERS;
+				forward = Path.COMMAND__ADMIN_MENU;
 
 			if (userRole == Role.CLIENT)
-				forward = Path.PAGE__USER_TESTS;
+				forward = Path.COMMAND__USER_MENU;
 
 			session.setAttribute("user", user);
 			log.trace("Set the session attribute: user --> " + user);

@@ -6,12 +6,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class AccountDAO {
 
     private static final String SQL__FIND_ACCOUNT_BY_LOGIN =
             "SELECT * FROM accounts WHERE login=?";
+
+    private static final String SQL__FIND_ALL_ACCOUNTS =
+            "SELECT * FROM accounts";
 
     private static final String SQL__FIND_ACCOUNT_BY_ID =
             "SELECT * FROM accounts WHERE id=?";
@@ -20,6 +25,29 @@ public class AccountDAO {
             "UPDATE accounts SET firstName=?, lastName=?, login=?, password=?, active=?, localeName=?" +
                     "	WHERE id=?";
 
+
+    public List<Account> findAll() {
+        List<Account> accounts = new ArrayList<>();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        Connection con = null;
+        try {
+            con = DBManager.getInstance().getConnection();
+            AccountMapper mapper = new AccountMapper();
+            pstmt = con.prepareStatement(SQL__FIND_ALL_ACCOUNTS);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                accounts.add(mapper.mapRow(rs));
+            }
+        } catch (SQLException e) {
+            DBManager.getInstance().rollbackAndClose(con);
+            e.printStackTrace();
+        } finally {
+            DBManager.getInstance().commitAndClose(con);
+        }
+
+        return accounts;
+    }
 
     public Account findAccount(int id) {
         Account account = null;

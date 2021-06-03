@@ -16,7 +16,9 @@ public final class Path {
 	public static final String PAGE__USER_TESTS = "/WEB-INF/jsp/client/list_tests.jsp";
 
 	// commands
-//	public static final String COMMAND__ADMIN_MENU = "/controller?command=adminMenu";
-//	public static final String COMMAND__USER_MENU = "/controller?command=userMenu";
+	public static final String COMMAND__USER_MENU = "/controller?command=listTests";
+	public static final String COMMAND__ADMIN_MENU = "/controller?command=listUsers";
+	public static final String COMMAND__BLOCK_USER = "/controller?command=blockUser";
+	public static final String COMMAND__UNBLOCK_USER = "/controller?command=unblockUser";
 
 }

@@ -9,6 +9,17 @@ public class Test {
     private String decisionTime;
     private int subjectId;
 
+    // not persisted fields
+    private int resultPercentage;
+
+    public int getResultPercentage() {
+        return resultPercentage;
+    }
+
+    public void setResultPercentage(int resultPercentage) {
+        this.resultPercentage = resultPercentage;
+    }
+
     public int getId() {
         return id;
     }

@@ -58,7 +58,7 @@ public class UpdateSettingsCommand extends Command {
 			updateAccount = true;
 		}
 		
-		if (updateAccount )
+		if (updateAccount)
 			new AccountDAO().updateAccount(account);
 
 		

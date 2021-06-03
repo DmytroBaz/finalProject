@@ -30,9 +30,11 @@ public class CommandContainer {
 		commands.put("listTests", new ListTestCommand());
 
 //
-//		// admin commands
-//		commands.put("listOrders", new ListOrdersCommand());
-		
+		// admin commands
+		commands.put("listUsers", new ListUserCommand());
+		commands.put("blockUser", new BlockUserCommand());
+		commands.put("unblockUser", new UnblockUserCommand());
+
 		log.debug("Command container was successfully initialized");
 		log.trace("Number of commands --> " + commands.size());
 	}
